@@ -289,9 +289,9 @@ footer .src li{margin-bottom:6px;break-inside:avoid}
         </div>
       </div>
       <figure class="hero-photo ph" id="heroPhoto" style="margin:0">
-        <img src="fotos/portada.jpg" alt="Caucasia a orillas del río Cauca" data-alt-src="https://commons.wikimedia.org/wiki/Special:FilePath/El_r%C3%ADo_Cauca.jpg?width=1200" onerror="swapOrFallback(this)">
+        <img src="puente.jpg" alt="El río Cauca y el puente Carlos Lleras Restrepo en Caucasia" data-alt-src="https://commons.wikimedia.org/wiki/Special:FilePath/El_r%C3%ADo_Cauca.jpg?width=1200" onerror="swapOrFallback(this)">
         <svg class="art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#8FC8DE"/><circle cx="310" cy="70" r="34" fill="#FFD23F"/><path d="M0 170 Q100 140 200 165 T400 160 V300 H0Z" fill="#2F6B2A"/><path d="M0 215 Q120 190 220 215 T400 205 V300 H0Z" fill="#1C6E8C"/><path d="M40 238 h70 l-10 10 h-50z" fill="#EB0A1E"/><path d="M70 238 v-18 l18 18" fill="#fff"/></svg>
-        <figcaption>Río Cauca a su paso por Caucasia</figcaption>
+        <figcaption>El río Cauca y el puente Carlos Lleras</figcaption>
       </figure>
     </div>
     <svg class="river-line" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C150 10 260 90 420 50 S700 10 860 55 S1080 80 1200 30"/></svg>
@@ -630,27 +630,27 @@ function bogotaToday(){
 
 /* ---------- Lugares (mapa + galería) ---------- */
 const PLACES=[
-  {id:'centro',s:'Parque principal',name:'Parque principal e Iglesia de la Inmaculada',kind:'Centro',x:120,y:250,lx:-8,ly:-16,foto:'fotos/parque-principal.jpg',
+  {id:'centro',s:'Parque principal',name:'Parque principal e Iglesia de la Inmaculada',kind:'Centro',x:120,y:250,lx:-8,ly:-16,foto:'parque-principal.jpg',
    txt:'El corazón del casco urbano. La Iglesia de la Inmaculada Concepción, de arquitectura colonial, celebra a su patrona el 8 de diciembre. En la plaza se hacen los conciertos del Retorno.',q:'Iglesia Inmaculada Concepción Caucasia Antioquia'},
-  {id:'sagrada',s:'Sagrada Familia',name:'Templo La Sagrada Familia',kind:'Religioso',x:150,y:292,lx:-40,ly:22,foto:'fotos/sagrada-familia.jpg',
+  {id:'sagrada',s:'Sagrada Familia',name:'Templo La Sagrada Familia',kind:'Religioso',x:150,y:292,lx:-40,ly:22,foto:'sagradafamilia.jpg',
    txt:'Su sagrario tiene forma de pez, en alusión a la pesca milagrosa y a la vida del río.',q:'Templo Sagrada Familia Caucasia'},
-  {id:'ceibas',s:'Las Ceibas',name:'Parque de Las Ceibas',kind:'Espacio público',x:98,y:212,lx:-60,ly:-12,foto:'fotos/parque-las-ceibas.jpg',
+  {id:'ceibas',s:'Las Ceibas',name:'Parque de Las Ceibas',kind:'Espacio público',x:98,y:212,lx:-60,ly:-12,foto:'parquelasceibas.jpg',
    txt:'Uno de los parques tradicionales del centro, remodelado por la Alcaldía como parte de la recuperación de espacio público. Cerca está el Parque de la Madre.',q:'Parque Las Ceibas Caucasia'},
-  {id:'puente',s:'Puente',name:'Puente Carlos Lleras Restrepo',kind:'Infraestructura',x:220,y:233,lx:14,ly:-12,foto:'fotos/puente-carlos-lleras.jpg',
+  {id:'puente',s:'Puente',name:'Puente Carlos Lleras Restrepo',kind:'Infraestructura',x:220,y:233,lx:14,ly:-12,foto:'puente.jpg',
    txt:'El puente que cruza el río Cauca y conecta a Caucasia con la vía hacia Nechí y El Bagre. Desde allí se ve el ancho del río.',q:'Puente Carlos Lleras Restrepo Caucasia'},
-  {id:'jardin',s:'Jardín Hidrobotánico',name:'Jardín Hidrobotánico Jorge Ignacio Hernández Camacho',kind:'Naturaleza',x:78,y:170,lx:-60,ly:-14,foto:'fotos/jardin-hidrobotanico.jpg',
+  {id:'jardin',s:'Jardín Hidrobotánico',name:'Jardín Hidrobotánico Jorge Ignacio Hernández Camacho',kind:'Naturaleza',x:78,y:170,lx:-60,ly:-14,foto:'jardin-hidrobotanico.jpg',
    txt:'Siete hectáreas con distintos ecosistemas, flora y fauna del Bajo Cauca. Ideal para ir con niños y aprender de botánica.',q:'Jardín Hidrobotánico Caucasia'},
-  {id:'ronda',s:'Ronda del Silencio',name:'Parque Ecológico La Ronda del Silencio',kind:'Naturaleza',x:60,y:330,lx:-40,ly:26,foto:'fotos/ronda-del-silencio.jpg',
+  {id:'ronda',s:'Ronda del Silencio',name:'Parque Ecológico La Ronda del Silencio',kind:'Naturaleza',x:60,y:330,lx:-40,ly:26,foto:'rondadelsilencio.jpg',
    txt:'Senderos para caminar, hacer deporte y respirar aire puro, con enfoque en educación ambiental.',q:'Parque Ecológico Ronda del Silencio Caucasia'},
-  {id:'aeropuerto',s:'Aeropuerto',name:'Aeropuerto Juan H. White',kind:'Transporte',x:150,y:345,lx:12,ly:12,foto:'fotos/aeropuerto.jpg',
+  {id:'aeropuerto',s:'Aeropuerto',name:'Aeropuerto Juan H. White',kind:'Transporte',x:150,y:345,lx:12,ly:12,foto:'aeropuerto.jpg',
    txt:'Al sur del casco urbano. Pista de 1.160 m. Reabrió en 2025 tras seis meses cerrado, con vuelos a Medellín.',q:'Aeropuerto Juan H. White Caucasia'},
-  {id:'laguna',s:'Laguna Colombia',name:'Laguna Colombia',kind:'Naturaleza',x:300,y:170,lx:-30,ly:-30,foto:'fotos/laguna-colombia.jpg',
+  {id:'laguna',s:'Laguna Colombia',name:'Laguna Colombia',kind:'Naturaleza',x:300,y:170,lx:-30,ly:-30,foto:'laguna-colombia.jpg',
    txt:'Unas 50 hectáreas de humedal. Se llega en lancha por el río; el reflejo del palmar sobre el agua es de lo más bonito del municipio.',q:'Laguna Colombia Caucasia'},
-  {id:'margento',s:'Ciénaga de Margento',name:'Ciénaga de Margento',kind:'Naturaleza',x:330,y:330,lx:-50,ly:44,foto:'fotos/cienaga-margento.jpg',
+  {id:'margento',s:'Ciénaga de Margento',name:'Ciénaga de Margento',kind:'Naturaleza',x:330,y:330,lx:-50,ly:44,foto:'cienaga-margento.jpg',
    txt:'Gran humedal navegable, rico en aves y peces. Margento fue cabecera municipal antes que Caucasia.',q:'Ciénaga de Margento Caucasia'},
-  {id:'agujas',s:'Cerro Las Agujas',name:'Cerro Mirador Las Agujas',kind:'Mirador',x:60,y:430,lx:14,ly:4,foto:'fotos/cerro-las-agujas.jpg',
+  {id:'agujas',s:'Cerro Las Agujas',name:'Cerro Mirador Las Agujas',kind:'Mirador',x:60,y:430,lx:14,ly:4,foto:'cerro-las-agujas.jpg',
    txt:'Caminata y vistas amplias del valle del Cauca. Lleva agua y sal temprano por el calor.',q:'Cerro Las Agujas Caucasia'},
-  {id:'estadio',s:'Estadio',name:'Estadio Orlando Aníbal Monroy',kind:'Deporte',x:176,y:196,lx:-30,ly:-16,foto:'fotos/estadio.jpg',
+  {id:'estadio',s:'Estadio',name:'Estadio Orlando Aníbal Monroy',kind:'Deporte',x:176,y:196,lx:-30,ly:-16,foto:'estadio.jpg',
    txt:'El escenario del fútbol caucasiano y de los torneos relámpago de las fiestas.',q:'Estadio Orlando Aníbal Monroy Caucasia'}
 ];
 
@@ -686,11 +686,11 @@ showPlace('centro');
 
 /* Galería */
 const GAL=[
-  {src:'fotos/portada.jpg',alt:'https://commons.wikimedia.org/wiki/Special:FilePath/El_r%C3%ADo_Cauca.jpg?width=900',t:'El río Cauca',q:'río Cauca Caucasia Antioquia',wide:true},
+  {src:'portada.jpg',alt:'https://commons.wikimedia.org/wiki/Special:FilePath/El_r%C3%ADo_Cauca.jpg?width=900',t:'El río Cauca',q:'río Cauca Caucasia Antioquia',wide:true},
   ...PLACES.map(p=>({src:p.foto,t:p.s,q:p.q})),
-  {src:'fotos/fiestas-retorno.jpg',t:'Fiestas del Retorno',q:'Fiestas del Retorno Caucasia'},
-  {src:'fotos/virgen-del-carmen.jpg',t:'Virgen del Carmen',q:'Virgen del Carmen Caucasia río lanchas'},
-  {src:'fotos/subienda.jpg',t:'Subienda del bocachico',q:'subienda bocachico Caucasia'},
+  {src:'fiestas-retorno.jpg',t:'Fiestas del Retorno',q:'Fiestas del Retorno Caucasia'},
+  {src:'virgen-del-carmen.jpg',t:'Virgen del Carmen',q:'Virgen del Carmen Caucasia río lanchas'},
+  {src:'subienda.jpg',t:'Subienda del bocachico',q:'subienda bocachico Caucasia'},
   {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Colombia_-_Antioquia_-_Caucasia.svg?width=500',t:'Ubicación en Antioquia',q:'mapa Caucasia Antioquia',contain:true}
 ];
 $('#gallery').innerHTML=GAL.map((g,i)=>`
