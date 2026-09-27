@@ -1,0 +1,18 @@
+Pon aquí tus fotos (JPG, ojalá horizontales y de menos de 500 KB) con EXACTAMENTE estos nombres.
+Si una foto no existe, la app muestra una ilustración y un botón "Más fotos".
+
+portada.jpg               -> foto grande del inicio (río Cauca o panorámica)
+parque-principal.jpg      -> Parque principal / Iglesia de la Inmaculada
+sagrada-familia.jpg       -> Templo La Sagrada Familia
+parque-las-ceibas.jpg     -> Parque de Las Ceibas
+puente-carlos-lleras.jpg  -> Puente Carlos Lleras Restrepo
+jardin-hidrobotanico.jpg  -> Jardín Hidrobotánico
+ronda-del-silencio.jpg    -> Parque Ecológico La Ronda del Silencio
+aeropuerto.jpg            -> Aeropuerto Juan H. White
+laguna-colombia.jpg       -> Laguna Colombia
+cienaga-margento.jpg      -> Ciénaga de Margento
+cerro-las-agujas.jpg      -> Cerro Mirador Las Agujas
+estadio.jpg               -> Estadio Orlando Aníbal Monroy
+fiestas-retorno.jpg       -> Fiestas del Retorno
+virgen-del-carmen.jpg     -> Virgen del Carmen en el río
+subienda.jpg              -> Subienda del bocachico
