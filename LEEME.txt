@@ -1,18 +1,832 @@
-Pon aquí tus fotos (JPG, ojalá horizontales y de menos de 500 KB) con EXACTAMENTE estos nombres.
-Si una foto no existe, la app muestra una ilustración y un botón "Más fotos".
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Caucasia, Antioquia · Capital del Bajo Cauca</title>
+<meta name="description" content="Todo sobre Caucasia, Antioquia: fotos, videos, historia, economía, tradiciones, gastronomía, lugares, su gente y la actualidad 2026.">
+<meta name="theme-color" content="#EB0A1E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caucasia, Antioquia · Capital del Bajo Cauca">
+<meta property="og:description" content="Fotos, videos, historia, economía, fiestas, comida y gente de Caucasia. Actualizado a septiembre de 2026.">
+<meta property="og:image" content="https://haroldco45.github.io/caucasia-antioquia-capital-del-bajo-cauca/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://haroldco45.github.io/caucasia-antioquia-capital-del-bajo-cauca/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF; --black:#000000; --red:#EB0A1E; --red-dark:#C00818;
+  --gray:#58595B; --line:#E3E3E3; --soft:#F4F4F4; --river:#1C6E8C;
+  --bg:var(--white); --fg:var(--black); --muted:var(--gray); --card:var(--white); --panel:var(--soft);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A0A0A; --fg:#F5F5F5; --muted:#A8A8AA; --card:#151515; --panel:#1C1C1C; --line:#2C2C2C; --river:#4FA3C4;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A0A0A; --fg:#F5F5F5; --muted:#A8A8AA; --card:#151515; --panel:#1C1C1C; --line:#2C2C2C; --river:#4FA3C4;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 112px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Barlow,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,video,iframe,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Barlow Condensed",Barlow,"Arial Narrow",sans-serif;line-height:1.05;margin:0}
+h2{font-size:clamp(34px,7vw,56px);font-weight:800;letter-spacing:-.01em}
+h3{font-size:24px;font-weight:700}
+p{margin:0 0 12px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+.lead{font-size:19px;color:var(--muted);max-width:62ch;margin-top:12px}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 
-portada.jpg               -> foto grande del inicio (río Cauca o panorámica)
-parque-principal.jpg      -> Parque principal / Iglesia de la Inmaculada
-sagrada-familia.jpg       -> Templo La Sagrada Familia
-parque-las-ceibas.jpg     -> Parque de Las Ceibas
-puente-carlos-lleras.jpg  -> Puente Carlos Lleras Restrepo
-jardin-hidrobotanico.jpg  -> Jardín Hidrobotánico
-ronda-del-silencio.jpg    -> Parque Ecológico La Ronda del Silencio
-aeropuerto.jpg            -> Aeropuerto Juan H. White
-laguna-colombia.jpg       -> Laguna Colombia
-cienaga-margento.jpg      -> Ciénaga de Margento
-cerro-las-agujas.jpg      -> Cerro Mirador Las Agujas
-estadio.jpg               -> Estadio Orlando Aníbal Monroy
-fiestas-retorno.jpg       -> Fiestas del Retorno
-virgen-del-carmen.jpg     -> Virgen del Carmen en el río
-subienda.jpg              -> Subienda del bocachico
+/* Top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-row{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700}
+.brand-mark{width:30px;height:30px;border-radius:50%;background:var(--red);display:grid;place-items:center;color:#fff;font-family:"Barlow Condensed";font-weight:800;font-size:17px}
+.clock{font-variant-numeric:tabular-nums;font-size:14px;color:var(--muted);text-align:right;line-height:1.2}
+.clock b{color:var(--fg);font-size:16px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:0 20px 10px;scrollbar-width:none;max-width:1120px;margin:0 auto}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;text-decoration:none;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+.chips a:hover,.chips a.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 22px;border-radius:999px;border:2px solid var(--fg);background:transparent;color:var(--fg);font:600 15px Barlow,sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn.sm{min-height:36px;padding:6px 14px;font-size:14px;border-width:1.5px}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+
+/* Hero */
+.hero{padding:40px 0 0;border-top:none;overflow:hidden}
+.hero-grid{display:grid;gap:28px;align-items:end}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-size:clamp(78px,20vw,188px);font-weight:800;letter-spacing:-.03em;line-height:.86}
+.hero .sub{font-family:"Barlow Condensed";font-size:clamp(22px,5vw,30px);font-weight:600;margin-top:10px}
+.hero .sub span{color:var(--red)}
+.live{display:flex;flex-wrap:wrap;gap:22px;margin:22px 0 26px}
+.live div{min-width:120px}
+.live small{display:block;color:var(--muted);font-size:13px}
+.live strong{font-family:"Barlow Condensed";font-size:32px;font-weight:700;font-variant-numeric:tabular-nums}
+.river-line{display:block;width:100%;height:90px;margin-top:30px}
+.river-line path{fill:none;stroke:var(--red);stroke-width:5;stroke-linecap:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:flow 2.6s ease-out .2s forwards}
+@keyframes flow{to{stroke-dashoffset:0}}
+.hero-photo{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(160deg,#1C6E8C,#0E3A4A 60%,#2F4F1F)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-photo figcaption{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.65);color:#fff;font-size:12px;padding:4px 10px;border-radius:999px}
+
+/* Facts */
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:28px}
+@media(min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
+.fact{background:var(--card);padding:18px}
+.fact b{display:block;font-family:"Barlow Condensed";font-size:30px;font-weight:700;line-height:1.1}
+.fact span{font-size:14px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+
+/* Map */
+.map-grid{display:grid;gap:24px;margin-top:28px}
+@media(min-width:880px){.map-grid{grid-template-columns:1fr 1fr;align-items:start}}
+.map-box{background:var(--panel);border-radius:22px;padding:10px;position:relative}
+.map-box svg{display:block;width:100%;height:auto}
+.pin{cursor:pointer}
+.pin circle.dot{fill:var(--red);stroke:var(--bg);stroke-width:3;transition:r .15s}
+.pin:hover circle.dot,.pin.on circle.dot,.pin:focus circle.dot{r:11}
+.pin text{font:600 12px Barlow,sans-serif;fill:var(--fg)}
+.pin:focus{outline:none}
+.place-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;position:sticky;top:130px}
+.place-card .kind{color:var(--red);font-weight:600;font-size:14px}
+.place-card h3{font-size:34px;margin:4px 0 10px}
+.place-thumb{border-radius:14px;overflow:hidden;aspect-ratio:16/9;margin-bottom:14px;background:var(--panel)}
+.place-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Photos */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+@media(min-width:760px){.gallery{grid-template-columns:repeat(4,1fr)}}
+.ph{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1;background:var(--panel);margin:0}
+.ph.wide{grid-column:span 2;aspect-ratio:2/1}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .art{position:absolute;inset:0;display:none}
+.ph.fallback .art{display:block}
+.ph.fallback img{display:none}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:end;gap:6px}
+.ph figcaption a{font-size:12px;font-weight:600;background:#fff;color:#000;padding:3px 9px;border-radius:999px;text-decoration:none;flex:none}
+.ph.contain img{object-fit:contain;padding:14px;background:#fff}
+
+/* Album */
+.album{margin-top:34px;background:var(--panel);border-radius:22px;padding:22px}
+.album-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+@media(min-width:760px){.album-grid{grid-template-columns:repeat(6,1fr)}}
+.album-item{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--card)}
+.album-item img,.album-item video{width:100%;height:100%;object-fit:cover;display:block}
+.album-item button{position:absolute;top:5px;right:5px;width:30px;height:30px;border-radius:50%;border:none;background:rgba(0,0,0,.7);color:#fff;font-size:16px;cursor:pointer}
+.empty{color:var(--muted);font-size:15px;margin-top:10px}
+input[type=file]{position:absolute;width:1px;height:1px;opacity:0}
+
+/* Videos */
+.videos{display:grid;gap:16px;margin-top:28px}
+@media(min-width:760px){.videos{grid-template-columns:repeat(2,1fr)}}
+.vid{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card)}
+.vid-frame{aspect-ratio:16/9;background:#000;position:relative;display:grid;place-items:center}
+.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.play{width:72px;height:72px;border-radius:50%;background:var(--red);border:none;cursor:pointer;display:grid;place-items:center}
+.play svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+.vid-body{padding:16px}
+.vid-body p{color:var(--muted);font-size:15px}
+.searches{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+
+/* Timeline */
+.timeline{list-style:none;margin:28px 0 0;padding:0;border-left:3px solid var(--fg);max-width:760px}
+.timeline li{position:relative;padding:0 0 26px 26px}
+.timeline li::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--fg)}
+.timeline li.hot::before{background:var(--red);border-color:var(--red)}
+.timeline .yr{font-family:"Barlow Condensed";font-size:28px;font-weight:800;line-height:1}
+.timeline p{margin:4px 0 0;color:var(--muted)}
+
+/* Economy */
+.eco{display:grid;gap:14px;margin-top:28px}
+@media(min-width:760px){.eco{grid-template-columns:repeat(3,1fr)}}
+.eco-item{border-top:4px solid var(--fg);padding-top:14px}
+.eco-item.main{border-color:var(--red)}
+.eco-item h3{margin-bottom:6px}
+.eco-item p{color:var(--muted);font-size:16px}
+.bars{margin-top:36px;max-width:760px}
+.bar{display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:center;margin-bottom:10px;font-size:15px}
+.bar-track{height:14px;background:var(--panel);border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;background:var(--fg);border-radius:999px}
+.bar-fill.r{background:var(--red)}
+
+/* Calendar */
+.months{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:26px}
+@media(min-width:760px){.months{grid-template-columns:repeat(12,1fr)}}
+.months button{min-height:52px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);font:700 15px "Barlow Condensed",sans-serif;cursor:pointer;position:relative}
+.months button.has::after{content:"";position:absolute;top:7px;right:7px;width:7px;height:7px;border-radius:50%;background:var(--red)}
+.months button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.months button.now{border-color:var(--red)}
+.month-panel{margin-top:16px;background:var(--panel);border-radius:18px;padding:22px;min-height:140px}
+.month-panel h3{font-size:30px;margin-bottom:10px}
+.ev{padding:12px 0;border-top:1px solid var(--line)}
+.ev:first-of-type{border-top:none}
+.ev b{display:block;font-size:18px}
+.ev span{color:var(--muted);font-size:15px}
+.countdown{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:22px}
+.countdown strong{font-family:"Barlow Condensed";font-size:56px;font-weight:800;color:var(--red);line-height:1}
+
+/* Two col text */
+.cols{display:grid;gap:26px;margin-top:28px}
+@media(min-width:860px){.cols{grid-template-columns:1fr 1fr}}
+.panel{background:var(--panel);border-radius:20px;padding:24px}
+.panel h3{margin-bottom:10px}
+
+/* Food */
+.food{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
+@media(min-width:760px){.food{grid-template-columns:repeat(4,1fr)}}
+.dish{border:1px solid var(--line);border-radius:18px;padding:18px;background:var(--card)}
+.dish .ico{font-size:34px;line-height:1}
+.dish b{display:block;font-family:"Barlow Condensed";font-size:22px;margin:8px 0 4px}
+.dish span{font-size:14px;color:var(--muted)}
+
+/* People */
+.people{display:grid;gap:12px;margin-top:28px}
+@media(min-width:760px){.people{grid-template-columns:repeat(2,1fr)}}
+.person{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-family:"Barlow Condensed";font-weight:800;font-size:22px}
+.person b{display:block;font-size:18px}
+.person .role{color:var(--red);font-size:14px;font-weight:600}
+.person p{color:var(--muted);font-size:15px;margin:4px 0 0}
+.demo{display:flex;height:34px;border-radius:999px;overflow:hidden;margin-top:12px}
+.demo div{display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden}
+
+/* Symbols */
+.symbols{display:grid;gap:18px;margin-top:28px}
+@media(min-width:760px){.symbols{grid-template-columns:repeat(3,1fr)}}
+.sym{border:1px solid var(--line);border-radius:20px;padding:20px;background:var(--card)}
+.sym-visual{height:150px;display:grid;place-items:center;margin-bottom:14px;border-radius:12px;background:var(--panel);overflow:hidden}
+.sym-visual img{max-height:130px}
+
+/* News */
+.news{display:grid;gap:12px;margin-top:28px}
+.news-item{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.news-item time{font-family:"Barlow Condensed";font-weight:800;font-size:20px;line-height:1.05}
+.news-item time small{display:block;font-family:Barlow;font-weight:500;font-size:13px;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--panel);margin-bottom:6px}
+.tag.alert{background:var(--red);color:#fff}
+.news-item p{color:var(--muted);font-size:15px;margin:4px 0 6px}
+.news-item a{font-size:14px;font-weight:600}
+
+/* Travel */
+.dist{width:100%;border-collapse:collapse;margin-top:14px;font-size:16px}
+.dist td{padding:10px 0;border-bottom:1px solid var(--line)}
+.dist td:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.table-wrap{overflow-x:auto}
+
+/* Quiz */
+.quiz{max-width:720px;margin-top:26px;background:var(--panel);border-radius:22px;padding:24px}
+.quiz .q{font-family:"Barlow Condensed";font-size:28px;font-weight:700;margin-bottom:16px;line-height:1.1}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;min-height:48px;padding:10px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);font:500 16px Barlow,sans-serif;cursor:pointer}
+.opts button.ok{border-color:#1E8E3E;background:#1E8E3E;color:#fff}
+.opts button.bad{border-color:var(--red);background:var(--red);color:#fff}
+.qfoot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px;flex-wrap:wrap}
+.progress{font-size:14px;color:var(--muted)}
+
+/* Footer */
+footer{background:#000;color:#fff;padding:48px 0 36px}
+footer a{color:#fff}
+footer .big{font-family:"Barlow Condensed";font-size:40px;font-weight:800;line-height:1}
+footer .src{columns:1;font-size:13px;color:#BDBDBD;margin-top:24px}
+@media(min-width:760px){footer .src{columns:2}}
+footer .src a{color:#BDBDBD}
+footer .src li{margin-bottom:6px;break-inside:avoid}
+.wa{background:#25D366;border-color:#25D366;color:#fff}
+.wa:hover{background:#1DA851;border-color:#1DA851;color:#fff}
+</style>
+<script>function swapOrFallback(img){   const alt=img.getAttribute('data-alt-src');   if(alt && img.src!==alt){img.src=alt;img.removeAttribute('data-alt-src');return;}   const fig=img.closest('.ph'); if(fig) fig.classList.add('fallback'); } </script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="#inicio"><span class="brand-mark">C</span>Caucasia</a>
+    <div class="clock" aria-live="off"><b id="clk">--:--</b><br><span id="clkDate">Hora de Colombia</span></div>
+  </div>
+  <nav class="chips" aria-label="Secciones">
+    <a href="#mapa">Mapa</a><a href="#fotos">Fotos</a><a href="#videos">Videos</a><a href="#historia">Historia</a><a href="#economia">Economía</a><a href="#fiestas">Fiestas</a><a href="#comida">Comida</a><a href="#gente">Gente</a><a href="#simbolos">Símbolos</a><a href="#actualidad">Actualidad 2026</a><a href="#llegar">Cómo llegar</a><a href="#quiz">Quiz</a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Caucasia</h1>
+        <p class="sub">Capital del Bajo Cauca · <span>Antioquia, Colombia</span></p>
+        <div class="live">
+          <div><small>Ahora en Caucasia</small><strong id="temp">-- °C</strong></div>
+          <div><small>Hora local (UTC-5)</small><strong id="clkBig">--:--</strong></div>
+          <div><small>Fundada el 12 de abril de</small><strong>1886</strong></div>
+        </div>
+        <div class="btns">
+          <a class="btn red" href="#mapa">Recorrer el municipio</a>
+          <a class="btn" href="#fotos">Ver fotos y videos</a>
+        </div>
+      </div>
+      <figure class="hero-photo ph" id="heroPhoto" style="margin:0">
+        <img src="puente.jpg" alt="El río Cauca y el puente Carlos Lleras Restrepo en Caucasia" data-alt-src="https://commons.wikimedia.org/wiki/Special:FilePath/El_r%C3%ADo_Cauca.jpg?width=1200" onerror="swapOrFallback(this)">
+        <svg class="art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#8FC8DE"/><circle cx="310" cy="70" r="34" fill="#FFD23F"/><path d="M0 170 Q100 140 200 165 T400 160 V300 H0Z" fill="#2F6B2A"/><path d="M0 215 Q120 190 220 215 T400 205 V300 H0Z" fill="#1C6E8C"/><path d="M40 238 h70 l-10 10 h-50z" fill="#EB0A1E"/><path d="M70 238 v-18 l18 18" fill="#fff"/></svg>
+        <figcaption>El río Cauca y el puente Carlos Lleras</figcaption>
+      </figure>
+    </div>
+    <svg class="river-line" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C150 10 260 90 420 50 S700 10 860 55 S1080 80 1200 30"/></svg>
+
+    <div class="facts">
+      <div class="fact"><b>1.429 km²</b><span>de territorio</span></div>
+      <div class="fact"><b>150 m</b><span>sobre el nivel del mar</span></div>
+      <div class="fact"><b>25–32 °C</b><span>temperatura típica</span></div>
+      <div class="fact"><b>52</b><span>barrios en la cabecera</span></div>
+      <div class="fact"><b>90.213</b><span>habitantes, censo DANE 2018</span></div>
+      <div class="fact"><b>+123 mil</b><span>habitantes según Turismo Antioquia</span></div>
+      <div class="fact"><b>286 km</b><span>a Medellín, unas 6 horas</span></div>
+      <div class="fact"><b>05154</b><span>código DANE del municipio</span></div>
+    </div>
+    <p class="note">El censo 2018 contó 76.772 personas en la zona urbana y 13.441 en la rural. Las cifras de población varían según la fuente: el censo ajustado y las proyecciones no coinciden.</p>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section id="mapa">
+  <div class="wrap">
+    <h2>El municipio, a orillas del Cauca</h2>
+    <p class="lead">Toca cada punto para ver qué es, sus fotos y cómo llegar. El esquema es ilustrativo, no está a escala.</p>
+    <div class="map-grid">
+      <div class="map-box">
+        <svg id="mapSvg" viewBox="0 0 400 520" role="group" aria-label="Mapa ilustrado de Caucasia">
+          <rect x="0" y="0" width="400" height="520" rx="16" fill="var(--panel)"/>
+          <!-- ciénagas -->
+          <ellipse cx="330" cy="330" rx="54" ry="34" fill="var(--river)" opacity=".28"/>
+          <ellipse cx="300" cy="170" rx="34" ry="22" fill="var(--river)" opacity=".28"/>
+          <!-- casco urbano -->
+          <path d="M70 200 Q110 170 175 190 Q205 230 190 300 Q150 330 95 310 Q60 270 70 200Z" fill="var(--fg)" opacity=".08"/>
+          <text x="78" y="318" font-family="Barlow" font-weight="600" font-size="11" fill="var(--muted)">Casco urbano</text>
+          <!-- río Cauca: fluye de sur (abajo) a norte (arriba) -->
+          <path d="M235 520 C215 440 250 400 225 330 S190 250 215 190 S260 90 235 0" fill="none" stroke="var(--river)" stroke-width="16" stroke-linecap="round"/>
+          <text x="248" y="470" font-family="Barlow" font-weight="600" font-size="13" fill="var(--river)" transform="rotate(-72 248 470)">Río Cauca</text>
+          <!-- troncal -->
+          <path d="M40 520 C70 420 60 360 110 300 S150 150 120 0" fill="none" stroke="var(--muted)" stroke-width="3" stroke-dasharray="8 6"/>
+          <text x="20" y="508" font-size="12" fill="var(--muted)" font-family="Barlow">a Medellín</text>
+          <text x="128" y="16" font-size="12" fill="var(--muted)" font-family="Barlow">a la Costa</text>
+          <!-- puente -->
+          <line x1="190" y1="238" x2="250" y2="228" stroke="var(--fg)" stroke-width="5"/>
+          <g id="pins"></g>
+        </svg>
+      </div>
+      <article class="place-card" id="placeCard" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<!-- FOTOS -->
+<section id="fotos">
+  <div class="wrap">
+    <h2>Fotos</h2>
+    <p class="lead">Una galería del municipio. Cada foto tiene un botón para ver más imágenes reales de ese lugar en la web.</p>
+    <div class="gallery" id="gallery"></div>
+
+    <div class="album">
+      <h3>Tu álbum de Caucasia</h3>
+      <p style="color:var(--muted);margin-top:6px">Agrega fotos y videos desde tu celular. Se guardan solo en este dispositivo.</p>
+      <div class="btns" style="margin-top:12px">
+        <label class="btn red" for="fileIn">Agregar fotos o videos</label>
+        <input id="fileIn" type="file" accept="image/*,video/*" multiple>
+      </div>
+      <div class="album-grid" id="albumGrid"></div>
+      <p class="empty" id="albumEmpty">Todavía no hay fotos. Toma una del parque, del río o de la plaza y agrégala aquí.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="wrap">
+    <h2>Videos</h2>
+    <p class="lead">Toca el botón rojo para verlos aquí mismo, o ábrelos en YouTube.</p>
+    <div class="videos" id="videoList"></div>
+    <h3 style="margin-top:34px">Buscar más videos</h3>
+    <div class="searches" id="ytSearches"></div>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<section id="historia">
+  <div class="wrap">
+    <h2>De Cañafístula a Caucasia</h2>
+    <p class="lead">Un caserío de chozas a orillas del río que terminó convertido en el centro comercial de toda una subregión.</p>
+    <ol class="timeline">
+      <li><span class="yr">1851</span><p>El territorio que hoy es Caucasia pertenecía a la ciudad de Cáceres, en la antigua provincia de Antioquia.</p></li>
+      <li class="hot"><span class="yr">12 abr 1886</span><p>Doña Petrona Arrieta y sus hijos Clemente y Leopoldo Arrieta Viloria llegan en canoas a un terreno alto lleno de árboles de cañafístula. Levantan chozas de bareque y nace el caserío de Cañafístula.</p></li>
+      <li><span class="yr">1910</span><p>Con más de 60 chozas pajizadas, Cañafístula recibe el nivel de inspección de policía (27 de abril).</p></li>
+      <li><span class="yr">1927</span><p>El obispo Miguel Ángel Builes y líderes cívicos le cambian el nombre a Caucasia. En mayo pasa a ser corregimiento de Margento.</p></li>
+      <li class="hot"><span class="yr">1942</span><p>Por la construcción de la Troncal de Occidente y su peso económico, Caucasia se convierte en cabecera municipal.</p></li>
+      <li><span class="yr">1972–1992</span><p>La bonanza del oro. La franja amarilla de la bandera la recuerda: Caucasia llegó a ser el mayor productor de oro de Colombia.</p></li>
+      <li><span class="yr">1978</span><p>Se aprueba el escudo municipal, diseñado por el párroco Ernesto Gómez Posada.</p></li>
+      <li><span class="yr">1982</span><p>Nechí vuelve a ser municipio, segregado de Caucasia y El Bagre.</p></li>
+      <li><span class="yr">2024</span><p>En julio, la Aerocivil cierra el aeropuerto Juan H. White por no cumplir normas técnicas; el inmueble había quedado sin dueño tras el fin de la aerolínea ADA.</p></li>
+      <li><span class="yr">2025</span><p>Tras seis meses cerrado, el aeropuerto reabre con vuelos a Medellín de Satena y Moon Flights.</p></li>
+      <li class="hot"><span class="yr">2026</span><p>Del 16 al 27 de marzo, el cuarto paro minero en tres años paraliza la vía a la Costa, con toque de queda y ley seca en Caucasia. Se levanta tras un acuerdo con el Gobierno nacional.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ECONOMIA -->
+<section id="economia">
+  <div class="wrap">
+    <h2>Economía</h2>
+    <p class="lead">Caucasia vive del ganado, del oro, del río y, sobre todo, del comercio: es la despensa que surte a buena parte del Bajo Cauca y del sur de Córdoba.</p>
+    <div class="eco">
+      <div class="eco-item main"><h3>Comercio y servicios</h3><p>El sector que más crece. Caucasia funciona como centro de abastecimiento de víveres para una geografía amplia, con distribuidores mayoristas, bancos, clínicas, universidades y centros comerciales.</p></div>
+      <div class="eco-item main"><h3>Ganadería</h3><p>Es el mayor productor de ganado de la subregión. Desde el siglo XIX abastecía de reses a los pueblos mineros, y hoy tiene feria bovina y equina en diciembre. Su carne asada es famosa.</p></div>
+      <div class="eco-item"><h3>Minería de oro</h3><p>El oro de aluvión, formal e informal, sostiene a miles de familias, pero también genera conflicto: los operativos contra la minería ilegal y la destrucción de maquinaria detonaron el paro de 2026.</p></div>
+      <div class="eco-item"><h3>Pesca</h3><p>El bocachico es el rey. En la subienda de enero y febrero el río se llena de pescadores y se celebran las Fiestas del Bocachico.</p></div>
+      <div class="eco-item"><h3>Agricultura y madera</h3><p>Arroz, maíz y cultivos de pancoger, además de la tala para fabricar muebles y enseres de madera. El escudo lleva una espiga de arroz.</p></div>
+      <div class="eco-item"><h3>Turismo</h3><p>Ecoturismo en ciénagas, lagunas, cerros y el jardín hidrobotánico, más el turismo de fiestas: el Retorno de diciembre llena hoteles y restaurantes.</p></div>
+    </div>
+
+    <div class="cols">
+      <div class="panel">
+        <h3>Los retos</h3>
+        <p>La economía del oro no genera suficiente empleo formal y el Bajo Cauca tiene altos índices de pobreza y necesidades básicas insatisfechas. El conflicto armado dejó más de 203 mil víctimas registradas en los seis municipios de la subregión hasta 2020, casi el 80 % de su población.</p>
+        <p>Los servicios públicos también pesan: el acueducto y el alcantarillado tienen redes deterioradas, fugas y cobertura incompleta.</p>
+      </div>
+      <div class="panel">
+        <h3>Las oportunidades</h3>
+        <p>Ubicación estratégica sobre la Troncal de Occidente, entre Medellín y la Costa Caribe; aeropuerto de nuevo operativo; formalización minera en discusión con el Gobierno; y un comercio que ya es referente para cinco subregiones.</p>
+        <p>En desempeño institucional, la Alcaldía reportó 82,7 puntos en la medición MIPG 2025, de los mejores del Bajo Cauca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIESTAS -->
+<section id="fiestas">
+  <div class="wrap">
+    <h2>Fiestas y tradiciones</h2>
+    <p class="lead">Aquí se cruzan lo paisa y lo costeño: la cultura chilapa. Se bailan mapalé, puya, cumbia y tambora, pero también pasillos y bambucos. Toca un mes para ver qué se celebra.</p>
+    <div class="months" id="months"></div>
+    <div class="month-panel" id="monthPanel"></div>
+    <div class="countdown"><strong id="cdDays">--</strong><span>días para la noche de velitas del 7 de diciembre, cuando se encienden los alumbrados en las Fiestas del Retorno.</span></div>
+    <p class="note">Las fechas exactas de cada edición las anuncia la Alcaldía; confírmalas antes de viajar.</p>
+  </div>
+</section>
+
+<!-- COMIDA -->
+<section id="comida">
+  <div class="wrap">
+    <h2>Comida típica</h2>
+    <p class="lead">Cocina de río y de potrero, con acento costeño y paisa.</p>
+    <div class="food">
+      <div class="dish"><div class="ico">🐟</div><b>Arroz con bocachico</b><span>El plato del río, sobre todo en temporada de subienda.</span></div>
+      <div class="dish"><div class="ico">🍲</div><b>Viuda de pescado</b><span>Pescado cocido al vapor con yuca, plátano y ñame.</span></div>
+      <div class="dish"><div class="ico">🥩</div><b>Carne asada</b><span>La res de la región, al carbón. Su jugosidad es famosa.</span></div>
+      <div class="dish"><div class="ico">🌭</div><b>Butifarras</b><span>Pequeños embutidos de tradición costeña.</span></div>
+      <div class="dish"><div class="ico">🌽</div><b>Envueltos de chócolo</b><span>Maíz tierno envuelto en hoja y cocido.</span></div>
+      <div class="dish"><div class="ico">🥘</div><b>Sancocho</b><span>De gallina, de pescado o trifásico, para el domingo.</span></div>
+      <div class="dish"><div class="ico">🫓</div><b>Arepas</b><span>La herencia paisa en la mesa diaria.</span></div>
+      <div class="dish"><div class="ico">🍉</div><b>Jugo de patilla</b><span>Para recuperar fuerzas con 32 °C a la sombra.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GENTE -->
+<section id="gente">
+  <div class="wrap">
+    <h2>Su gente</h2>
+    <p class="lead">Caucasianos: pescadores, barequeros, vaqueros, comerciantes, bailarines. Gente que llegó río arriba y río abajo y se fue quedando.</p>
+    <div class="cols" style="margin-top:22px">
+      <div class="panel">
+        <h3>Quiénes somos</h3>
+        <p>Según el censo DANE de 2005, la población se reconocía así:</p>
+        <div class="demo" role="img" aria-label="Mestizos y blancos 88,9 %, afrocolombianos 10 %, indígenas 1,1 %">
+          <div style="flex:88.9;background:#000">Mestizos y blancos 88,9 %</div>
+          <div style="flex:10;background:#EB0A1E">10 %</div>
+          <div style="flex:1.1;background:#58595B"></div>
+        </div>
+        <p class="note">Negro: mestizos y blancos · Rojo: afrocolombianos · Gris: indígenas (1,1 %). En el Bajo Cauca hay resguardos zenú y embera, y consejos comunitarios afro.</p>
+      </div>
+      <div class="panel">
+        <h3>Cómo vive la gente</h3>
+        <p>El río marca el ritmo: la subienda, las lanchas a Nechí y Margento, el baño en el Cauca en el Festival del Río. En la tarde, parque y tienda; el fin de semana, carne asada y vallenato; en diciembre, todos los que se fueron vuelven para el Retorno.</p>
+      </div>
+    </div>
+    <h3 style="margin-top:36px">Nombres en la historia de Caucasia</h3>
+    <div class="people">
+      <div class="person"><div class="avatar">PA</div><div><b>Petrona Arrieta</b><span class="role">Fundadora, 1886</span><p>Llegó con sus hijos Clemente y Leopoldo Arrieta Viloria y levantó las primeras chozas de Cañafístula.</p></div></div>
+      <div class="person"><div class="avatar">CA</div><div><b>Clemente Arrieta Viloria</b><span class="role">Fundador</span><p>Remontó el Cauca con un grupo de expedicionarios en canoas. Se le recuerda como el fundador del caserío.</p></div></div>
+      <div class="person"><div class="avatar">MB</div><div><b>Monseñor Miguel Ángel Builes</b><span class="role">Obispo, 1927</span><p>Impulsó, junto a líderes cívicos, el cambio de nombre de Cañafístula a Caucasia.</p></div></div>
+      <div class="person"><div class="avatar">JW</div><div><b>Juan H. White</b><span class="role">Ingeniero, nombre del aeropuerto</span><p>John Henry White, ingeniero británico que trazó calles y obras en Antioquia y fundó Dabeiba. Hoy le da nombre al aeropuerto y a un colegio.</p></div></div>
+      <div class="person"><div class="avatar">EG</div><div><b>Padre Ernesto Gómez Posada</b><span class="role">Autor del escudo</span><p>Párroco nacido en Santa Rosa de Osos que imaginó el escudo aprobado en 1978.</p></div></div>
+      <div class="person"><div class="avatar">JH</div><div><b>Jorge Ignacio Hernández Camacho</b><span class="role">Naturalista</span><p>Su nombre lo lleva el Jardín Hidrobotánico de Caucasia, siete hectáreas dedicadas a la biodiversidad del Bajo Cauca.</p></div></div>
+      <div class="person"><div class="avatar">RG</div><div><b>Reinaldo González Guevara</b><span class="role">Casa de la Cultura</span><p>La casa de la cultura municipal lleva su nombre; allí se forman danza, música y artes.</p></div></div>
+      <div class="person"><div class="avatar">F</div><div><b>“Facundo”, Dagoberto Masón Meléndez</b><span class="role">Personaje popular</span><p>Nació en 1949 a bordo de la lancha La Argentina, entre Guacamayal y Caucasia. Su historia la contó Comfama en sus Postales de Antioquia.</p></div></div>
+    </div>
+    <p class="note">¿Conoces a un caucasiano destacado que deba estar aquí? Escríbenos por WhatsApp y lo agregamos.</p>
+  </div>
+</section>
+
+<!-- SIMBOLOS -->
+<section id="simbolos">
+  <div class="wrap">
+    <h2>Símbolos</h2>
+    <div class="symbols">
+      <div class="sym">
+        <div class="sym-visual"><svg viewBox="0 0 300 180" width="220" aria-label="Bandera de Caucasia"><rect width="300" height="60" fill="#1E8E3E"/><rect y="60" width="300" height="60" fill="#FFD100"/><rect y="120" width="300" height="60" fill="#1E8E3E"/></svg></div>
+        <h3>La bandera</h3>
+        <p style="color:var(--muted)">Verde por la fertilidad del suelo, amarillo por la riqueza del oro de la bonanza de 1972 a 1992, y verde otra vez por la esperanza y el progreso.</p>
+      </div>
+      <div class="sym">
+        <div class="sym-visual"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Escudo_de_Caucasia.svg?width=260" alt="Escudo de Caucasia" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'🛡️',style:'font-size:80px'}))"></div>
+        <h3>El escudo</h3>
+        <p style="color:var(--muted)">Una cabeza de res por la ganadería, una batea por el oro, dos manos unidas por el progreso, un río con montañas y sol naciente, y un pez con una espiga de arroz por la pesca y la agricultura.</p>
+      </div>
+      <div class="sym">
+        <div class="sym-visual"><svg viewBox="0 0 200 160" width="170" aria-label="Flor de cañafístulo"><g fill="#FFD100"><circle cx="100" cy="40" r="12"/><circle cx="84" cy="62" r="12"/><circle cx="116" cy="62" r="12"/><circle cx="92" cy="86" r="11"/><circle cx="110" cy="88" r="11"/><circle cx="100" cy="110" r="10"/><circle cx="100" cy="130" r="8"/></g><path d="M100 10 V150" stroke="#2F6B2A" stroke-width="3"/></svg></div>
+        <h3>La flor: cañafístulo</h3>
+        <p style="color:var(--muted)">La Cassia fistula, de racimos amarillos, le dio el primer nombre al pueblo. El árbol mide de 12 a 15 metros y su vaina guarda una pulpa negra y dulce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTUALIDAD -->
+<section id="actualidad">
+  <div class="wrap">
+    <h2>Actualidad 2026</h2>
+    <p class="lead">Lo más importante que ha pasado en Caucasia este año, con el enlace a la fuente. Última revisión: 27 de septiembre de 2026.</p>
+    <div class="news" id="news"></div>
+    <div class="btns" style="margin-top:20px">
+      <a class="btn" href="https://news.google.com/search?q=Caucasia%20Antioquia&hl=es-419&gl=CO&ceid=CO:es-419" target="_blank" rel="noopener">Ver noticias de hoy</a>
+      <a class="btn" href="https://www.caucasia-antioquia.gov.co/" target="_blank" rel="noopener">Sitio de la Alcaldía</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMO LLEGAR -->
+<section id="llegar">
+  <div class="wrap">
+    <h2>Cómo llegar</h2>
+    <div class="cols">
+      <div class="panel">
+        <h3>Por carretera</h3>
+        <p>Desde Medellín por la Troncal de Occidente: Don Matías, Santa Rosa de Osos, Yarumal, Valdivia, Tarazá y Caucasia. Unos 286 km y cerca de 6 horas.</p>
+        <p>Ruta alterna por el Nordeste: Barbosa, Cisneros, Yolombó, Yalí, Vegachí, Remedios, Segovia, Zaragoza y Caucasia.</p>
+        <p>Hacia el norte, la misma troncal sigue a Planeta Rica, Montería y la Costa Caribe.</p>
+      </div>
+      <div class="panel">
+        <h3>Por aire</h3>
+        <p>Aeropuerto Juan H. White (código CAQ), al sur del casco urbano, con una pista de 1.160 metros. Reabrió en 2025 con vuelos a Medellín (Olaya Herrera) operados por Satena y Moon Flights.</p>
+        <p class="note">Horarios y aerolíneas cambian: verifica con la aerolínea antes de viajar.</p>
+        <div class="btns" style="margin-top:12px"><a class="btn sm" href="https://www.google.com/maps/dir/?api=1&destination=Caucasia%2C%20Antioquia" target="_blank" rel="noopener">Cómo llegar en Google Maps</a></div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="dist" aria-label="Límites del municipio">
+        <tr><td>Al norte</td><td>Montelíbano (Córdoba)</td></tr>
+        <tr><td>Al oriente</td><td>Nechí y El Bagre</td></tr>
+        <tr><td>Al sur</td><td>Zaragoza</td></tr>
+        <tr><td>Al occidente</td><td>Cáceres</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="wrap">
+    <h2>¿Cuánto sabes de Caucasia?</h2>
+    <div class="quiz" id="quizBox"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Caucasia, pueblo de esperanza y pujanza.</p>
+    <p style="color:#BDBDBD;margin-top:10px">Una app de <b style="color:#fff">Vibras Positivas HM</b>. ¿Quieres una app así para tu municipio, tu negocio o tu campaña?</p>
+    <div class="btns" style="margin-top:16px">
+      <a class="btn wa" href="https://wa.me/573117700431?text=Hola%20Harold%2C%20vi%20la%20app%20de%20Caucasia" target="_blank" rel="noopener">Escribir por WhatsApp · 311 770 0431</a>
+      <button class="btn" style="border-color:#fff;color:#fff" id="shareBtn" type="button">Compartir esta app</button>
+    </div>
+    <ol class="src">
+      <li><a href="https://es.wikipedia.org/wiki/Caucasia" target="_blank" rel="noopener">Wikipedia: Caucasia (historia, símbolos, clima, fiestas)</a></li>
+      <li><a href="https://www.caucasia-antioquia.gov.co/" target="_blank" rel="noopener">Alcaldía de Caucasia</a></li>
+      <li><a href="https://turismoantioquia.travel/caucasia/" target="_blank" rel="noopener">Turismo Antioquia: Caucasia</a></li>
+      <li><a href="https://www.infobae.com/colombia/2025/02/27/esta-es-la-capital-de-la-subregion-del-bajo-cauca-antioqueno-enamora-con-su-naturaleza-y-cultura/" target="_blank" rel="noopener">Infobae: la capital del Bajo Cauca (2025)</a></li>
+      <li><a href="https://calendarioferiasyfiestas.fontur.com.co/agenda/fiestas-del-retorno" target="_blank" rel="noopener">Fontur: Fiestas del Retorno</a></li>
+      <li><a href="https://www.elcolombiano.com/antioquia/levantaron-paro-minero-en-bajo-cauca-antioquia-y-sur-de-cordoba-LE35022845" target="_blank" rel="noopener">El Colombiano: fin del paro minero (mar 2026)</a></li>
+      <li><a href="https://www.pares.com.co/bajo-cauca-en-crisis-ocho-dias-de-paro-minero-y-una-fractura-que-persiste/" target="_blank" rel="noopener">Pares: Bajo Cauca en crisis (2026)</a></li>
+      <li><a href="https://www.elcolombiano.com/antioquia/aeropuerto-caucasia-nueva-ruta-medellin-antioquia-EF26546673" target="_blank" rel="noopener">El Colombiano: reapertura del aeropuerto (2025)</a></li>
+      <li><a href="https://web.comisiondelaverdad.co/especiales/bajo-cauca/index.html" target="_blank" rel="noopener">Comisión de la Verdad: especial Bajo Cauca</a></li>
+      <li><a href="https://www.comfama.com/cultura-y-ocio/postales-de-antioquia/bajo-cauca/relato-de-caucasia/" target="_blank" rel="noopener">Comfama: Relato de Caucasia</a></li>
+    </ol>
+    <p style="color:#8A8A8A;font-size:13px;margin-top:20px">Información recopilada de fuentes públicas a septiembre de 2026. Fotos de Wikimedia Commons bajo sus licencias; las demás, de su autor.</p>
+  </div>
+</footer>
+
+<script>
+/* ---------- Utilidades ---------- */
+const TZ='America/Bogota';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const gImg=q=>'https://www.google.com/search?tbm=isch&q='+encodeURIComponent(q);
+const gMap=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+const ytS=q=>'https://www.youtube.com/results?search_query='+encodeURIComponent(q);
+
+
+/* ---------- Reloj y clima (hora real de Colombia) ---------- */
+function tick(){
+  const now=new Date();
+  const t=new Intl.DateTimeFormat('es-CO',{timeZone:TZ,hour:'numeric',minute:'2-digit',hour12:true}).format(now);
+  const d=new Intl.DateTimeFormat('es-CO',{timeZone:TZ,weekday:'short',day:'numeric',month:'short'}).format(now);
+  $('#clk').textContent=t; $('#clkBig').textContent=t; $('#clkDate').textContent=d;
+}
+tick(); setInterval(tick,15000);
+
+(async()=>{
+  try{
+    const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=7.98&longitude=-75.2&current=temperature_2m,apparent_temperature&timezone=America%2FBogota');
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    $('#temp').textContent=Math.round(j.current.temperature_2m)+' °C';
+    $('#temp').title='Sensación térmica '+Math.round(j.current.apparent_temperature)+' °C';
+  }catch(e){ $('#temp').textContent='25–32 °C'; $('#temp').previousElementSibling.textContent='Temperatura típica'; }
+})();
+
+function bogotaToday(){
+  const p=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  const [y,m,d]=p.split('-').map(Number); return {y,m,d};
+}
+(function countdown(){
+  const {y,m,d}=bogotaToday();
+  const today=Date.UTC(y,m-1,d);
+  let target=Date.UTC(y,11,7); if(today>target) target=Date.UTC(y+1,11,7);
+  $('#cdDays').textContent=Math.round((target-today)/86400000);
+})();
+
+/* ---------- Lugares (mapa + galería) ---------- */
+const PLACES=[
+  {id:'centro',s:'Parque principal',name:'Parque principal e Iglesia de la Inmaculada',kind:'Centro',x:120,y:250,lx:-8,ly:-16,foto:'parque-principal.jpg',
+   txt:'El corazón del casco urbano. La Iglesia de la Inmaculada Concepción, de arquitectura colonial, celebra a su patrona el 8 de diciembre. En la plaza se hacen los conciertos del Retorno.',q:'Iglesia Inmaculada Concepción Caucasia Antioquia'},
+  {id:'sagrada',s:'Sagrada Familia',name:'Templo La Sagrada Familia',kind:'Religioso',x:150,y:292,lx:-40,ly:22,foto:'sagradafamilia.jpg',
+   txt:'Su sagrario tiene forma de pez, en alusión a la pesca milagrosa y a la vida del río.',q:'Templo Sagrada Familia Caucasia'},
+  {id:'ceibas',s:'Las Ceibas',name:'Parque de Las Ceibas',kind:'Espacio público',x:98,y:212,lx:-60,ly:-12,foto:'parquelasceibas.jpg',
+   txt:'Uno de los parques tradicionales del centro, remodelado por la Alcaldía como parte de la recuperación de espacio público. Cerca está el Parque de la Madre.',q:'Parque Las Ceibas Caucasia'},
+  {id:'puente',s:'Puente',name:'Puente Carlos Lleras Restrepo',kind:'Infraestructura',x:220,y:233,lx:14,ly:-12,foto:'puente.jpg',
+   txt:'El puente que cruza el río Cauca y conecta a Caucasia con la vía hacia Nechí y El Bagre. Desde allí se ve el ancho del río.',q:'Puente Carlos Lleras Restrepo Caucasia'},
+  {id:'jardin',s:'Jardín Hidrobotánico',name:'Jardín Hidrobotánico Jorge Ignacio Hernández Camacho',kind:'Naturaleza',x:78,y:170,lx:-60,ly:-14,foto:'jardin-hidrobotanico.jpg',
+   txt:'Siete hectáreas con distintos ecosistemas, flora y fauna del Bajo Cauca. Ideal para ir con niños y aprender de botánica.',q:'Jardín Hidrobotánico Caucasia'},
+  {id:'ronda',s:'Ronda del Silencio',name:'Parque Ecológico La Ronda del Silencio',kind:'Naturaleza',x:60,y:330,lx:-40,ly:26,foto:'rondadelsilencio.jpg',
+   txt:'Senderos para caminar, hacer deporte y respirar aire puro, con enfoque en educación ambiental.',q:'Parque Ecológico Ronda del Silencio Caucasia'},
+  {id:'aeropuerto',s:'Aeropuerto',name:'Aeropuerto Juan H. White',kind:'Transporte',x:150,y:345,lx:12,ly:12,foto:'aeropuerto.jpg',
+   txt:'Al sur del casco urbano. Pista de 1.160 m. Reabrió en 2025 tras seis meses cerrado, con vuelos a Medellín.',q:'Aeropuerto Juan H. White Caucasia'},
+  {id:'laguna',s:'Laguna Colombia',name:'Laguna Colombia',kind:'Naturaleza',x:300,y:170,lx:-30,ly:-30,foto:'laguna-colombia.jpg',
+   txt:'Unas 50 hectáreas de humedal. Se llega en lancha por el río; el reflejo del palmar sobre el agua es de lo más bonito del municipio.',q:'Laguna Colombia Caucasia'},
+  {id:'margento',s:'Ciénaga de Margento',name:'Ciénaga de Margento',kind:'Naturaleza',x:330,y:330,lx:-50,ly:44,foto:'cienaga-margento.jpg',
+   txt:'Gran humedal navegable, rico en aves y peces. Margento fue cabecera municipal antes que Caucasia.',q:'Ciénaga de Margento Caucasia'},
+  {id:'agujas',s:'Cerro Las Agujas',name:'Cerro Mirador Las Agujas',kind:'Mirador',x:60,y:430,lx:14,ly:4,foto:'cerro-las-agujas.jpg',
+   txt:'Caminata y vistas amplias del valle del Cauca. Lleva agua y sal temprano por el calor.',q:'Cerro Las Agujas Caucasia'},
+  {id:'estadio',s:'Estadio',name:'Estadio Orlando Aníbal Monroy',kind:'Deporte',x:176,y:196,lx:-30,ly:-16,foto:'estadio.jpg',
+   txt:'El escenario del fútbol caucasiano y de los torneos relámpago de las fiestas.',q:'Estadio Orlando Aníbal Monroy Caucasia'}
+];
+
+function art(seed){
+  const skies=['#8FC8DE','#F6C177','#A7D3E8','#F2A65A'];
+  const s=skies[seed%skies.length];
+  return `<svg class="art" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="200" fill="${s}"/><circle cx="${150-seed*7%60}" cy="50" r="20" fill="#FFD23F"/><path d="M0 120 Q60 ${95+seed%20} 120 118 T200 110 V200 H0Z" fill="#2F6B2A"/><path d="M0 150 Q70 135 130 152 T200 145 V200 H0Z" fill="#1C6E8C"/></svg>`;
+}
+
+const pinsG=$('#pins');
+PLACES.forEach((p,i)=>{
+  const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+  g.setAttribute('class','pin'); g.setAttribute('tabindex','0'); g.setAttribute('role','button');
+  g.setAttribute('aria-label',p.name); g.dataset.id=p.id;
+  g.innerHTML=`<circle class="dot" cx="${p.x}" cy="${p.y}" r="8"/><text x="${p.x+p.lx}" y="${p.y+p.ly}">${esc(p.s)}</text>`;
+  g.addEventListener('click',()=>showPlace(p.id));
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPlace(p.id)}});
+  pinsG.appendChild(g);
+});
+function showPlace(id){
+  const p=PLACES.find(x=>x.id===id);
+  document.querySelectorAll('.pin').forEach(el=>el.classList.toggle('on',el.dataset.id===id));
+  $('#placeCard').innerHTML=`
+    <div class="place-thumb ph" style="aspect-ratio:16/9"><img src="${p.foto}" alt="${esc(p.name)}" onerror="this.closest('.ph').classList.add('fallback')">${art(PLACES.indexOf(p))}</div>
+    <span class="kind">${esc(p.kind)}</span><h3>${esc(p.name)}</h3><p style="color:var(--muted)">${esc(p.txt)}</p>
+    <div class="btns" style="margin-top:14px">
+      <a class="btn sm red" href="${gImg(p.q)}" target="_blank" rel="noopener">Ver fotos</a>
+      <a class="btn sm" href="${ytS(p.q)}" target="_blank" rel="noopener">Ver videos</a>
+      <a class="btn sm" href="${gMap(p.q)}" target="_blank" rel="noopener">Abrir en Maps</a>
+    </div>`;
+}
+showPlace('centro');
+
+/* Galería */
+const GAL=[
+  {src:'portada.jpg',alt:'https://commons.wikimedia.org/wiki/Special:FilePath/El_r%C3%ADo_Cauca.jpg?width=900',t:'El río Cauca',q:'río Cauca Caucasia Antioquia',wide:true},
+  ...PLACES.map(p=>({src:p.foto,t:p.s,q:p.q})),
+  {src:'fiestas-retorno.jpg',t:'Fiestas del Retorno',q:'Fiestas del Retorno Caucasia'},
+  {src:'virgen-del-carmen.jpg',t:'Virgen del Carmen',q:'Virgen del Carmen Caucasia río lanchas'},
+  {src:'subienda.jpg',t:'Subienda del bocachico',q:'subienda bocachico Caucasia'},
+  {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Colombia_-_Antioquia_-_Caucasia.svg?width=500',t:'Ubicación en Antioquia',q:'mapa Caucasia Antioquia',contain:true}
+];
+$('#gallery').innerHTML=GAL.map((g,i)=>`
+  <figure class="ph${g.wide?' wide':''}${g.contain?' contain':''}">
+    <img loading="lazy" src="${g.src}" ${g.alt?`data-alt-src="${g.alt}"`:''} alt="${esc(g.t)}" onerror="swapOrFallback(this)">
+    ${art(i)}
+    <figcaption><span>${esc(g.t)}</span><a href="${gImg(g.q)}" target="_blank" rel="noopener">Más fotos</a></figcaption>
+  </figure>`).join('');
+
+/* ---------- Álbum local (IndexedDB) ---------- */
+let db=null;
+function openDB(){return new Promise((res,rej)=>{try{const r=indexedDB.open('caucasia-album',1);r.onupgradeneeded=()=>r.result.createObjectStore('media',{keyPath:'id'});r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);}catch(e){rej(e)}})}
+function store(mode){return db.transaction('media',mode).objectStore('media')}
+async function loadAlbum(){
+  const grid=$('#albumGrid'); grid.innerHTML='';
+  if(!db){$('#albumEmpty').style.display='block';return}
+  const items=await new Promise(res=>{const r=store('readonly').getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>res([])});
+  $('#albumEmpty').style.display=items.length?'none':'block';
+  items.sort((a,b)=>b.id-a.id).forEach(it=>{
+    const url=URL.createObjectURL(it.blob);
+    const d=document.createElement('div'); d.className='album-item';
+    d.innerHTML=it.type.startsWith('video')?`<video src="${url}" controls playsinline></video>`:`<img src="${url}" alt="${esc(it.name)}">`;
+    const b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Borrar'); b.textContent='×';
+    b.onclick=()=>{store('readwrite').delete(it.id).onsuccess=loadAlbum};
+    d.appendChild(b); grid.appendChild(d);
+  });
+}
+$('#fileIn').addEventListener('change',async e=>{
+  const files=[...e.target.files]; if(!files.length) return;
+  if(!db){ // sin IndexedDB: mostrar solo en esta sesión
+    $('#albumEmpty').style.display='none';
+    files.forEach(f=>{const d=document.createElement('div');d.className='album-item';const u=URL.createObjectURL(f);d.innerHTML=f.type.startsWith('video')?`<video src="${u}" controls playsinline></video>`:`<img src="${u}" alt="">`;$('#albumGrid').prepend(d)});
+    return;
+  }
+  const st=store('readwrite');
+  files.forEach((f,i)=>st.put({id:Date.now()+i,type:f.type,name:f.name,blob:f}));
+  st.transaction.oncomplete=loadAlbum; e.target.value='';
+});
+openDB().then(d=>{db=d;loadAlbum()}).catch(()=>loadAlbum());
+
+/* ---------- Videos ---------- */
+const VIDEOS=[
+  {id:'M3ZAan1KJmI',t:'Caucasia en Rodando Caminos',d:'Recorrido de Teleantioquia por el municipio: su gente, su río y sus sabores.'},
+  {id:'Z0zvDfVSOBM',t:'Caucasia y los PDET',d:'Comunidades y gobiernos reimpulsan los programas de desarrollo con enfoque territorial en el municipio (2024).'},
+  {list:'PL7FU7iQDTXTtwzHyOR6iGB-25Xbj9lZ7R',t:'Lista: Caucasia, Antioquia',d:'Una lista de reproducción con varios videos del municipio hechos por caucasianos.'}
+];
+$('#videoList').innerHTML=VIDEOS.map((v,i)=>{
+  const watch=v.id?`https://www.youtube.com/watch?v=${v.id}`:`https://www.youtube.com/playlist?list=${v.list}`;
+  return `<article class="vid"><div class="vid-frame" id="vf${i}"><button class="play" type="button" aria-label="Reproducir ${esc(v.t)}" onclick="playVid(${i})"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></button></div>
+  <div class="vid-body"><h3>${esc(v.t)}</h3><p>${esc(v.d)}</p><a class="btn sm" href="${watch}" target="_blank" rel="noopener">Abrir en YouTube</a></div></article>`;
+}).join('');
+function playVid(i){
+  const v=VIDEOS[i];
+  const src=v.id?`https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`:`https://www.youtube-nocookie.com/embed/videoseries?list=${v.list}&autoplay=1`;
+  $('#vf'+i).innerHTML=`<iframe src="${src}" title="${esc(v.t)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+}
+const YT=['Caucasia Antioquia drone','Fiestas del Retorno Caucasia','Río Cauca Caucasia','Jardín Hidrobotánico Caucasia','Ciénaga de Margento','Virgen del Carmen Caucasia lanchas','Subienda bocachico Caucasia','Qué hacer en Caucasia'];
+$('#ytSearches').innerHTML=YT.map(q=>`<a class="btn sm" href="${ytS(q)}" target="_blank" rel="noopener">${esc(q)}</a>`).join('');
+
+/* ---------- Calendario de fiestas ---------- */
+const MES=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+const MESL=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const EV={
+ 1:[['Fiestas del Río','Homenaje al río Cauca con competencias de natación y de neumáticos.'],['Fiestas del Bocachico','En plena subienda: pesca, concursos y el plato del río.'],['Corralejas','La tradición costeña que viene desde diciembre.']],
+ 2:[['Fiestas del Bocachico','Continúa la subienda de enero y febrero.']],
+ 3:[['Feria artesanal','Entre marzo y abril, muestras de artesanos de la región.']],
+ 4:[['Aniversario de Caucasia','El 12 de abril se recuerda la fundación de Cañafístula en 1886.'],['Feria artesanal','Cierra su temporada.']],
+ 6:[['Festival de Bandas Folclóricas','Papayeras y bandas de viento de la región.'],['ExpoCaucasia','A finales de junio y comienzos de julio: comercio, emprendimiento y agro.']],
+ 7:[['Fiestas del Pilón','Música y baile de tradición costeña.'],['Virgen del Carmen · 16 de julio','Celebración en el río Cauca, con lanchas y embarcaciones, en honor a la patrona de conductores y navegantes.']],
+ 8:[['Día de la Antioqueñidad · 10 y 11 de agosto','Trova, pasillos y orgullo paisa en tierra chilapa.']],
+ 9:[['Festival Regional de la Trova Paisa · 14 y 15 de septiembre','Trovadores de la región se miden en la improvisación.']],
+ 10:[['Semanas culturales','Danza, música, teatro y exposiciones en colegios y en la Casa de la Cultura.']],
+ 11:[['Mercado Artesanal y Agroempresarial','A mediados de mes, artesanos y productores del departamento.'],['Festival Vallenato','Acordeones, cajas y guacharacas.'],['Fiestas del Retorno','En 2025 fueron del 28 al 30 de noviembre: comparsas, conciertos y los que vuelven a casa.']],
+ 12:[['Fiestas del Retorno','Primera semana de diciembre en su fecha tradicional.'],['Noche de velitas · 7 de diciembre','Se encienden los alumbrados navideños, con pólvora y conciertos en la plaza.'],['Inmaculada Concepción · 8 de diciembre','Fiesta patronal.'],['Feria ganadera, bovina y equina','La vitrina del ganado de la región.'],['Corralejas','Comienza la temporada.'],['Desfile de años viejos · 30 y 31','El pueblo sale a la calle con sus muñecos.']]
+};
+const nowM=bogotaToday().m;
+$('#months').innerHTML=MES.map((m,i)=>`<button type="button" data-m="${i+1}" class="${EV[i+1]?'has':''}${i+1===nowM?' now':''}" aria-label="${MESL[i]}">${m}</button>`).join('');
+function showMonth(m){
+  document.querySelectorAll('#months button').forEach(b=>b.classList.toggle('on',+b.dataset.m===m));
+  const list=EV[m];
+  $('#monthPanel').innerHTML=`<h3>${MESL[m-1]}${m===nowM?' · este mes':''}</h3>`+
+    (list?list.map(e=>`<div class="ev"><b>${esc(e[0])}</b><span>${esc(e[1])}</span></div>`).join('')
+         :`<p style="color:var(--muted)">No hay una fiesta grande registrada este mes. Buen momento para visitar las ciénagas y el jardín hidrobotánico con calma.</p>`);
+}
+$('#months').addEventListener('click',e=>{const b=e.target.closest('button');if(b)showMonth(+b.dataset.m)});
+showMonth(nowM);
+
+/* ---------- Actualidad ---------- */
+const NEWS=[
+  {f:'27 mar',y:'2026',tag:'Economía',t:'Se levanta el paro minero tras 12 días',d:'Mineros y Gobierno acordaron formalización y desmonte voluntario de maquinaria. El gobernador intervino para desbloquear la vía en Zaragoza.',u:'https://www.infobae.com/colombia/2026/03/28/levantan-el-paro-minero-en-el-bajo-cauca-antioqueno-y-sur-de-cordoba-tras-dialogo-con-el-gobierno-esto-fue-lo-que-se-acordo/',s:'Infobae'},
+  {f:'16 mar',y:'2026',tag:'Orden público',alert:true,t:'Arranca el cuarto paro minero en tres años',d:'Toque de queda nocturno, ley seca y restricción de parrillero en Caucasia. Hubo bloqueos en la vía a la Costa, quema de vehículos y una lancha, y ataques a una misión médica.',u:'https://www.elcolombiano.com/antioquia/paro-minero-bajo-cauca-antioqueno-cordoba-2026-cierres-viales-AH34661472',s:'El Colombiano'},
+  {f:'8 abr',y:'2026',tag:'Institucional',t:'Procuraduría formula cargos al alcalde',d:'Por presuntas irregularidades en un convenio de 2024 para mejorar acueducto y alcantarillado, firmado por contratación directa. Es un proceso disciplinario en curso; no hay fallo.',u:'https://www.bluradio.com/regiones/antioquia/formulan-cargos-contra-alcalde-de-caucasia-por-presuntas-irregularidades-en-un-contrato-rg10',s:'Blu Radio'},
+  {f:'Jul',y:'2026',tag:'Social',t:'Renta Joven y gestión institucional',d:'La Alcaldía abrió gestiones para jóvenes de Renta Joven (9 al 16 de julio) y destacó 82,7 puntos en la medición de desempeño MIPG 2025.',u:'https://www.caucasia-antioquia.gov.co/',s:'Alcaldía de Caucasia'},
+  {f:'Feb',y:'2025',tag:'Transporte',t:'Reabre el aeropuerto Juan H. White',d:'Después de seis meses cerrado, volvió a operar con rutas a Medellín de Satena y Moon Flights.',u:'https://www.elcolombiano.com/antioquia/aeropuerto-caucasia-nueva-ruta-medellin-antioquia-EF26546673',s:'El Colombiano'}
+];
+$('#news').innerHTML=NEWS.map(n=>`<article class="news-item"><time>${esc(n.f)}<small>${n.y}</small></time><div><span class="tag${n.alert?' alert':''}">${esc(n.tag)}</span><h3 style="font-size:22px">${esc(n.t)}</h3><p>${esc(n.d)}</p><a href="${n.u}" target="_blank" rel="noopener">Leer en ${esc(n.s)}</a></div></article>`).join('');
+
+/* ---------- Quiz ---------- */
+const QZ=[
+  {q:'¿Cómo se llamaba Caucasia cuando fue fundada?',o:['Margento','Cañafístula','Guacamayal','Cacerí'],a:1},
+  {q:'¿En qué año se fundó el caserío?',o:['1886','1927','1942','1910'],a:0},
+  {q:'¿Qué representa la franja amarilla de la bandera?',o:['El sol','El arroz','El oro','La cañafístula'],a:2},
+  {q:'¿Qué pez es protagonista de la subienda?',o:['Bagre','Mojarra','Bocachico','Sábalo'],a:2},
+  {q:'¿Qué noche se encienden los alumbrados en diciembre?',o:['24 de diciembre','7 de diciembre','31 de diciembre','1 de diciembre'],a:1},
+  {q:'¿Cómo se llama la mezcla de cultura paisa y costeña de la región?',o:['Chilapa','Zenú','Raizal','Chocoana'],a:0}
+];
+let qi=0,score=0;
+function renderQ(){
+  const box=$('#quizBox');
+  if(qi>=QZ.length){
+    box.innerHTML=`<p class="q">Sacaste ${score} de ${QZ.length}</p><p style="color:var(--muted)">${score===QZ.length?'Caucasiano de pura cepa.':score>=4?'Conoces bien tu tierra.':'Vuelve a recorrer la app y sube tu puntaje.'}</p><div class="qfoot"><button class="btn red" type="button" id="qAgain">Jugar otra vez</button></div>`;
+    $('#qAgain').onclick=()=>{qi=0;score=0;renderQ()};return;
+  }
+  const it=QZ[qi];
+  box.innerHTML=`<p class="progress">Pregunta ${qi+1} de ${QZ.length}</p><p class="q">${esc(it.q)}</p><div class="opts">${it.o.map((o,i)=>`<button type="button" data-i="${i}">${esc(o)}</button>`).join('')}</div><div class="qfoot"><span class="progress">Puntos: ${score}</span><button class="btn sm" type="button" id="qNext" hidden>Siguiente</button></div>`;
+  box.querySelectorAll('.opts button').forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i; if(box.dataset.locked) return; box.dataset.locked=1;
+    if(i===it.a){b.classList.add('ok');score++}else{b.classList.add('bad');box.querySelector(`[data-i="${it.a}"]`).classList.add('ok')}
+    $('#qNext').hidden=false; $('#qNext').focus();
+  });
+  delete box.dataset.locked;
+  $('#qNext').onclick=()=>{qi++;renderQ()};
+}
+renderQ();
+
+/* ---------- Compartir, navegación activa, PWA ---------- */
+$('#shareBtn').onclick=async()=>{
+  const data={title:'Caucasia, Antioquia',text:'Mira esta app sobre Caucasia: fotos, videos, historia y fiestas.',url:location.href};
+  try{ if(navigator.share) await navigator.share(data); else { await navigator.clipboard.writeText(location.href); $('#shareBtn').textContent='Enlace copiado'; } }catch(e){}
+};
+const chips=[...document.querySelectorAll('.chips a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){chips.forEach(c=>c.classList.toggle('on',c.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(s=>io.observe(s));
+if('serviceWorker' in navigator && location.hostname.endsWith('github.io')){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>
